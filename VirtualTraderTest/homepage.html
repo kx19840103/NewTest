@@ -1,0 +1,553 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>在线交易 东方财富网在线交易，安全、便捷、省钱</title>
+    <meta name="keywords" content="东方财富，同信证券，开户，交易,佣金,网上开户,股票开户,证券开户 ,基金开户,炒股开户,理财，股票,财经,证券,金融,行情," />
+    <meta name="description" content="东方财富网在线交易系统，采用银行级网页加密技术，身份校验， 多重验密，更安全。随时随地，打开网页即可交易，更便捷。万2.5佣金，交易越多省钱越多，更省钱。" />
+    <meta name="Author" content="东方财富网" />
+    <meta name="from" content="东方财富网证券交易" />
+    <meta name="Copyright" content="东方财富网版权所有" />
+    <link href="/favicon.ico" type=image/x-icon rel="shortcut icon" />
+    <link href="/CssBundles/CommonCSS?v=HyLpK864GMTZILCaJ8KqJKn0Tko6u1m_IzsER1m_yJE1" rel="stylesheet"/>
+<link href="/Js/lib/popup/css/Style?v=OduhORpXDa-cElcUQLvhxB5zG99MYbzrT7WhUQUJIts1" rel="stylesheet"/>
+
+    <link href="/Css/ui.css?v=2017122801" rel="stylesheet" />
+    <!--[if lte IE 7]>
+    <script type="text/javascript" src="/Js/json2.js"></script>
+    <![endif]-->
+    <script src="/Shared/GetJsStaticConfig?v=2017122801"></script>
+    <script src="/JsBundles/BaseJS?v=BMyYjNvc_A-Af2lB0u6MnwWZ_b8cddSu9U5DOlzsKhM1"></script>
+<script src="/JsBundles/CommonJS?v=JxEXXEonSZ-VoRn0NScOoHCi64B58B28gwprbX4EfQA1"></script>
+
+</head>
+<body>
+    <div class="page">
+<a class="onlineKF" id="onlineKF" href="https://txcs.eastmoney.com/" target="_blank">
+    <div class="onlineKF_wrap">
+        <div class="onlineKF_side"></div>
+        <div class="onlineKF_main">
+        </div>
+    </div>
+</a>
+<script>
+    (function () {
+        var $onlineKF = $("#onlineKF");
+        $onlineKF.hover(function () {
+            $(this).find(".onlineKF_main").show();
+        }, function () {
+            $(this).find(".onlineKF_main").hide()
+        });
+
+    })();
+</script>
+<div id="header" class="header">
+    <div class="mbody">
+        <div class="logo4">
+            <a target="_blank" href="http://www.eastmoney.com/">
+                <img src="/images/logo4.png">
+            </a>
+        </div>
+        <div class="topnavi_r">
+            <img src="/images/tright2.png">
+        </div>        
+    </div>
+</div>
+<input id="em_validatekey" type="hidden" value="9a2be776-b9ed-4997-807c-6c51e953e028" />
+<script>
+    function macCallback_loginResult(status, message, market, userId, userName, sessionId, yybdm, yjxx) {
+        if (status == 0) {
+            utools.loadAjaxV2({
+                url: "/Login/MacCreateLogin", data: {
+                    userId: userId,
+                    userName: userName,
+                    sessionId: sessionId,
+                    yybdm: yybdm,
+                    yjxx: yjxx
+                },
+                success: function (json) {
+                    if (json) {
+                        if (json.Status == 0) {
+                            window.location.reload();
+                        } else {
+                            window.location.href = "/Login";
+                        }
+                    }
+                    else {
+                        window.location.href = "/Login";
+                    }
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    window.location.href = "/Login";
+                },
+                complete: function () {                    
+                }
+            });
+        } else {
+            window.location.href = "/Login";
+        }
+    }
+</script>
+        <div id="main" class="main ">
+            <div class="module">
+        <div class="tabbar tabbar-v2">
+            <label class="position-trade click">
+                <a href="/Trade/Buy"><i class="flag-cn"></i>沪深交易</a>
+            </label>
+            <label class="position-trade">
+            <a href="/HK/Trade/Buy"><i class="flag-hk-usa"></i>港美交易</a>
+
+            </label>
+            <p class="pr10 lh40">
+                <span><strong> 账户：</strong>冼凯(541*****0312)</span><span>
+                    [<a href="/Login/ExitLogin?clear=1">退出</a>]
+                </span>
+            </p>
+        </div>
+
+
+
+
+                <div class="mt20">
+                    <div class="v_nav">
+                        <div class="navtab">
+                            <div class="tab current"><a href="/Trade/Buy">普通</a></div>
+                                <div class="tab"><a href="/MarginTrade/Buy">信用</a></div>
+                                                            <div class="tab"><a href="/FundTrade/Purchase">开放式基金</a></div>
+                                                            <div class="tab"><a href="/OTCTrade/Subscribe">OTC</a></div>
+                                                            <div class="tab"><a id="ggqq_login" href="javascript:void(0)">股票期权</a></div>
+                        </div>
+                        <ul class="top">
+                            <li class="top_item" data-value="search/position"><a class="top_a" href="/Search/Position">资金持仓</a></li>
+                            <li class="top_item" data-value="buy"><a class="top_a" href="/Trade/Buy">买入</a></li>
+                            <li class="top_item" data-value="sale"><a class="top_a" href="/Trade/Sale">卖出</a></li>
+                            <li class="top_item" data-value="trade/revoke"><a class="top_a" href="/Trade/Revoke">撤单</a></li>
+                            <li class="top_item hide" href="/Search/Orders">
+                                <a class="top_a" href="javascript:void(0)">查询</a>
+                                <ul class="sub">
+                                    <li class="sub_item" data-value="orders"><a href="/Search/Orders">当日委托</a></li>
+                                    <li class="sub_item" data-value="deal"><a href="/Search/Deal">当日成交</a></li>
+                                    <li class="sub_item" data-value="hisorders"><a href="/Search/HisOrders">历史委托</a></li>
+                                    <li class="sub_item" data-value="hisdeal"><a href="/Search/HisDeal">历史成交</a></li>
+                                    <li class="sub_item" data-value="fundsflow"><a href="/Search/FundsFlow">交割单</a></li>
+                                </ul>
+                            </li>
+                                <li class="top_item" data-value="margin/marginopenaccount"><a class="top_a" href="/Margin/MarginOpenAccount">融资融券开户</a></li>
+                                                            <li class="top_item hide" href="/SchroederFund/TTBIndex">
+                                    <a class="top_a" href="javascript:void(0)">天天宝</a>
+                                    <ul class="sub">
+                                        
+                                        <li class="sub_item " data-value="schroederfund/ttbindex"><a href="/SchroederFund/TTBIndex">天天宝首页</a></li>
+                                        <li class="sub_item " data-value="withdrawcash"><a href="/SchroederFund/WithdrawCash">取现</a></li>
+                                        <li class="sub_item " data-value="fundconvert"><a href="/SchroederFund/FundConvert">基金转换</a></li>
+                                        <li class="sub_item " data-value="querywithdrawcash"><a href="/SchroederFund/QueryWithdrawCash">查询</a></li>
+                                        <li class="sub_item " data-value="hisearned"><a href="/SchroederFund/HisEarned">历史收益</a></li>
+                                        <li class="sub_item " data-value="hisflow"><a href="/SchroederFund/HisFlow">历史流水</a></li>
+                                        <li class="sub_item " data-value="ttbsetting"><a href="/SchroederFund/TTBSetting">设置额度</a></li>
+                                    </ul>
+                                </li>
+                                                            <li class="top_item" data-value="vlink1"><a class="top_a" target="_blank" href="http://cfd.xzsec.com/oneaccount/pages/jyd.jsp">财富贷</a></li>
+                                                            <li class="top_item hide" href="/HKTrade/HKBuy">
+                                    <a class="top_a" href="javascript:void(0)">沪港通</a>
+                                    <ul class="sub">
+                                        <li class="sub_item " data-value="hktrade/hkbuy"><a href="/HKTrade/HKBuy">买入</a></li>
+                                        <li class="sub_item " data-value="hktrade/hksale"><a href="/HKTrade/HKSale">卖出</a></li>
+                                        <li class="sub_item " data-value="hktrade/oddsale"><a href="/HKTrade/OddSale">零股卖出</a></li>
+                                        <li class="sub_item " data-value="hktrade/revoke"><a href="/HKTrade/Revoke">撤单</a></li>
+                                        <li class="sub_item " data-value="hktrade/voteclaim"><a href="/HKTrade/VoteClaim">投票申报</a></li>
+                                        <li class="sub_item " data-value="hktrade/commpanyactionclaim"><a href="/HKTrade/CommpanyActionClaim">公司行为申报</a></li>
+                                        <li class="sub_item " data-value="hktrade/queryposition"><a href="/HKTrade/QueryPosition">查询资金股票</a></li>
+                                        <li class="sub_item " data-value="hktrade/querytradelimit"><a href="/HKTrade/QueryTradeLimit">查询额度</a></li>
+                                        <li class="sub_item " data-value="hktrade/querydebt"><a href="/HKTrade/QueryDebt">查询负债</a></li>
+                                        <li class="sub_item " data-value="hktrade/queryexchangerate"><a href="/HKTrade/QueryExchangeRate">查询汇率</a></li>
+                                        <li class="sub_item " data-value="hktrade/querypricemargin"><a href="/HKTrade/QueryPriceMargin">查询价差</a></li>
+                                        <li class="sub_item " data-value="hktrade/querytodayorder"><a href="/HKTrade/QueryTodayOrder">查询当日委托</a></li>
+                                        <li class="sub_item " data-value="hktrade/querytodaydeal"><a href="/HKTrade/QueryTodayDeal">查询当日成交</a></li>
+                                        <li class="sub_item " data-value="hktrade/queryhistoryorder"><a href="/HKTrade/QueryHistoryOrder">查询历史委托</a></li>
+                                        <li class="sub_item " data-value="hktrade/queryhistorydeal"><a href="/HKTrade/QueryHistoryDeal">查询历史成交</a></li>
+                                        <li class="sub_item " data-value="hktrade/queryfunddetail"><a href="/HKTrade/QueryFundDetail">查询资金明细</a></li>
+                                        <li class="sub_item " data-value="hktrade/queryportfoliofee"><a href="/HKTrade/QueryPortfolioFee">查询证券组合费</a></li>
+                                        <li class="sub_item " data-value="hktrade/querydeliveryorder"><a href="/HKTrade/QueryDeliveryOrder">查询交割单</a></li>
+                                        <li class="sub_item " data-value="hktrade/querystatement"><a href="/HKTrade/QueryStatement">查询对账单</a></li>
+                                        <li class="sub_item " data-value="hktrade/queryhisvote"><a href="/HKTrade/QueryHisVote">查询历史投票</a></li>
+                                        <li class="sub_item " data-value="hktrade/queryhiscorporateactions"><a href="/HKTrade/QueryHisCorporateActions">查询历史公司行为</a></li>
+                                        <li class="sub_item " data-value="hktrade/querynotifications"><a href="/HKTrade/QueryNotifications">查询通知信息</a></li>
+                                        <li class="sub_item " data-value="hktrade/querybusinessreturns"><a href="/HKTrade/QueryBusinessReturns">查询业务回报</a></li>
+                                        <li class="sub_item " data-value="hktrade/querynonsettlement"><a href="/HKTrade/QueryNonSettlement">查询未交收明细</a></li>
+                                        <li class="sub_item " data-value="hktrade/querytradecalendar"><a href="/HKTrade/QueryTradeCalendar">查询交易日历</a></li>
+                                        <li class="sub_item " data-value="hktrade/querysecuritiessubjectinfo"><a href="/HKTrade/QuerySecuritiesSubjectInfo">查询证券标的信息</a></li>
+                                        <li class="sub_item " data-value="hktrade/permission"><a href="/HKTrade/Permission">开通权限</a></li>
+                                        <li class="sub_item " data-value="hktrade/risktest"><a href="/HKTrade/RiskTest">风险等级</a></li>
+                                        <li class="sub_item " data-value="hktrade/loretest"><a href="/HKTrade/LoreTest">知识测评</a></li>
+                                    </ul>
+                                </li>
+                                                            <li class="top_item hide" href="/SGTTrade/HKBuy">
+                                    <a class="top_a" href="javascript:void(0)">深港通</a>
+                                    <ul class="sub">
+                                        <li class="sub_item " data-value="sgttrade/hkbuy"><a href="/SGTTrade/HKBuy">买入</a></li>
+                                        <li class="sub_item " data-value="sgttrade/hksale"><a href="/SGTTrade/HKSale">卖出</a></li>
+                                        <li class="sub_item " data-value="sgttrade/oddsale"><a href="/SGTTrade/OddSale">零股卖出</a></li>
+                                        <li class="sub_item " data-value="sgttrade/revoke"><a href="/SGTTrade/Revoke">撤单</a></li>
+                                        <li class="sub_item " data-value="sgttrade/voteclaim"><a href="/SGTTrade/VoteClaim">投票申报</a></li>
+                                        <li class="sub_item " data-value="sgttrade/commpanyactionclaim"><a href="/SGTTrade/CommpanyActionClaim">公司行为申报</a></li>
+                                        <li class="sub_item " data-value="sgttrade/queryposition"><a href="/SGTTrade/QueryPosition">查询资金股票</a></li>
+                                        <li class="sub_item " data-value="sgttrade/querydebt"><a href="/SGTTrade/QueryDebt">查询负债</a></li>
+                                        <li class="sub_item " data-value="sgttrade/queryorder"><a href="/SGTTrade/QueryOrder">查询委托</a></li>
+                                        <li class="sub_item " data-value="sgttrade/querydeal"><a href="/SGTTrade/QueryDeal">查询成交</a></li>
+                                        <li class="sub_item " data-value="sgttrade/querydetail"><a href="/SGTTrade/QueryDetail">查询明细</a></li>
+                                        <li class="sub_item " data-value="sgttrade/querydoandsa"><a href="/SGTTrade/QueryDOAndSA">查询交割/对账单</a></li>
+                                        <li class="sub_item " data-value="sgttrade/queryhisvote"><a href="/SGTTrade/QueryHisVote">查询历史投票</a></li>
+                                        <li class="sub_item " data-value="sgttrade/queryhiscorporateactions"><a href="/SGTTrade/QueryHisCorporateActions">查询历史公司行为</a></li>
+                                        <li class="sub_item " data-value="sgttrade/querybusiness"><a href="/SGTTrade/QueryBusiness">查询业务</a></li>
+                                        <li class="sub_item " data-value="sgttrade/permission"><a href="/SGTTrade/Permission">开通权限</a></li>
+                                        <li class="sub_item " data-value="sgttrade/risktest"><a href="/SGTTrade/RiskTest">风险等级</a></li>
+                                        <li class="sub_item " data-value="sgttrade/loretest"><a href="/SGTTrade/LoreTest">知识测评</a></li>
+                                    </ul>
+                                </li>
+                            <li class="top_item hide" href="/Trade/NewBuy">
+                                <a class="top_a" href="javascript:void(0)"> 新股申购</a>
+                                <ul class="sub">
+                                    <li class="sub_item " data-value="newbuy"><a href="/Trade/NewBuy">新股申购</a></li>
+                                    <li class="sub_item " data-value="newbatbuy"><a href="/Trade/NewBatBuy">新股批量申购</a></li>
+                                    <li class="sub_item " data-value="newquota"><a href="/Trade/NewQuota">可申购额度查询</a></li>
+                                    <li class="sub_item " data-value="newnumsearch"><a href="/Trade/NewNumSearch">配号查询</a></li>
+                                    <li class="sub_item " data-value="newballotsear"><a href="/Trade/NewBallotSear">中签查询</a></li>
+                                    
+                                    <li class="sub_item " data-value="trade/historyballot"><a href="/Trade/HistoryBallot">历史中签查询</a></li>
+                                </ul>
+                            </li>
+                                <li class="top_item hide" href="/Xzsg/Purchase">
+                                    <a class="top_a" href="javascript:void(0)">新债申购</a>
+                                    <ul class="sub">
+                                        <li class="sub_item" data-value="xzsg/purchase"><a href="/Xzsg/Purchase">申购</a></li>
+                                        <li class="sub_item" data-value="xzsg/batpurchase"><a href="/Xzsg/BatPurchase">新债批量申购</a></li>
+                                        <li class="sub_item" data-value="xzsg/numbersearch"><a href="/Xzsg/NumberSearch">配号查询</a></li>
+                                        <li class="sub_item" data-value="xzsg/successsearch"><a href="/Xzsg/SuccessSearch">中签查询</a></li>
+                                        <li class="sub_item" data-value="xzsg/hissuccesssearch"><a href="/Xzsg/HisSuccessSearch">历史中签查询</a></li>
+                                    </ul>
+                                </li>
+
+                            <li class="top_item hide" href="/OtherTrade/IndepExercise">
+                                <a class="top_a" href="javascript:void(0)"> 自主行权</a>
+                                <ul class="sub">
+                                    <li class="sub_item " data-value="indepexercise"><a href="/OtherTrade/IndepExercise">自主行权</a></li>
+                                    <li class="sub_item " data-value="cancelindepexercise"><a href="/OtherTrade/CancelIndepExercise">自主行权撤单</a></li>
+                                    <li class="sub_item " data-value="queryindepexercisetodayorders"><a href="/OtherTrade/QueryIndepExerciseTodayOrders">查询当日委托</a></li>
+                                    <li class="sub_item " data-value="queryindepexercisehisorders"><a href="/OtherTrade/QueryIndepExerciseHisOrders">查询历史委托</a></li>
+                                </ul>
+                            </li>
+                            <li class="top_item" data-value="othertrade/tricontract"><a class="top_a" href="/OtherTrade/TriContract">三方存管签约</a></li>
+                            <li class="top_item" data-value="othertrade/twowaytrade"><a class="top_a" href="/OtherTrade/TwoWayTrade">双向委托</a></li>
+                            <li class="top_item hide" href="/OtherTrade/MarketPriceBuy">
+                                <a class="top_a" href="javascript:void(0)">市价委托</a>
+                                <ul class="sub">
+                                    <li class="sub_item " data-value="othertrade/marketpricebuy"><a href="/OtherTrade/MarketPriceBuy">买入</a></li>
+                                    <li class="sub_item " data-value="othertrade/marketpricesale"><a href="/OtherTrade/MarketPriceSale">卖出</a></li>
+                                </ul>
+                            </li>
+                            <li class="top_item" data-value="othertrade/risktest"><a class="top_a" href="/OtherTrade/RiskTest">风险等级</a></li>
+                            <li class="top_item hide" href="/OtherTrade/NetworkVote">
+                                <a class="top_a" href="javascript:void(0)">网络投票</a>
+                                <ul class="sub">
+                                    <li class="sub_item " data-value="networkvote"><a href="/OtherTrade/NetworkVote">投票</a></li>
+                                    <li class="sub_item " data-value="querynetworkvotes"><a href="/OtherTrade/QueryNetworkVotes">查询投票</a></li>
+                                    <li class="sub_item " data-value="othertrade/votepwd"><a href="/OtherTrade/VotePwd">网络投票密码服务</a></li>
+                                </ul>
+                            </li>
+                            <li class="top_item hide" href="/FundsMgr/QueryAssets">
+                                <a class="top_a" href="javascript:void(0)">资金管理</a>
+                                <ul class="sub">
+                                    <li class="sub_item " data-value="fundsmgr/queryassets"><a href="/FundsMgr/QueryAssets">查询资产</a></li>
+                                    <li class="sub_item " data-value="fundsmgr/internaltransfer"><a href="/FundsMgr/InternalTransfer">内部调拨</a></li>
+                                    <li class="sub_item " data-value="fundsmgr/fundsmerge"><a href="/FundsMgr/FundsMerge">资金归集</a></li>
+                                    <li class="sub_item" data-value="queryinternaltransferwater"><a href="/FundsMgr/QueryInternalTransferWater">内部调拨流水</a></li>
+                                    <li class="sub_item" data-value="fundsmgr/stockbanktransfer"><a href="/FundsMgr/StockBankTransfer">银证转账</a></li>
+                                    <li class="sub_item" data-value="stockbanktransferwater"><a href="/FundsMgr/StockBankTransferWater">银证转账流水</a></li>
+                                </ul>
+                            </li>
+                            <li class="top_item hide" href="/OtherTrade/BatTradeBuy">
+                                <a class="top_a" href="javascript:void(0)">批量下单</a>
+                                <ul class="sub">
+                                    <li class="sub_item " data-value="othertrade/battradebuy"><a href="/OtherTrade/BatTradeBuy">买入</a></li>
+                                    <li class="sub_item " data-value="othertrade/battradesale"><a href="/OtherTrade/BatTradeSale">卖出</a></li>
+                                </ul>
+                            </li>
+                            <li class="top_item" data-value="othertrade/pretradeorder"><a class="top_a" href="/OtherTrade/PreTradeOrder">预埋单</a></li>
+                            <li class="top_item hide" href="/BondRepurchase/SecuritiesLendingRepurchase">
+                                <a class="top_a" href="javascript:void(0)">国债逆回购</a>
+                                <ul class="sub">
+                                    <li class="sub_item " data-value="bondrepurchase/securitieslendingrepurchase"><a href="/BondRepurchase/SecuritiesLendingRepurchase">融券回购</a></li>
+                                    <li class="sub_item " data-value="bondrepurchase/queryunexpiredrepurchase2"><a href="/BondRepurchase/QueryUnexpiredRepurchase2">未到期回购查询</a></li>
+                                </ul>
+                            </li>
+                            <li class="top_item hide" href="/VenueFundTrade/Subscribe">
+                                <a class="top_a" href="javascript:void(0)">场内基金</a>
+                                <ul class="sub">
+                                    <li class="sub_item " data-value="venuefundtrade/subscribe"><a href="/VenueFundTrade/Subscribe">基金认购</a></li>
+                                    <li class="sub_item " data-value="venuefundtrade/purchase"><a href="/VenueFundTrade/Purchase">基金申购</a></li>
+                                    <li class="sub_item " data-value="venuefundtrade/redeem"><a href="/VenueFundTrade/Redeem">基金赎回</a></li>
+                                    <li class="sub_item " data-value="venuefundtrade/transfer"><a href="/VenueFundTrade/Transfer">基金转换</a></li>
+                                    <li class="sub_item " data-value="venuefundtrade/merge"><a href="/VenueFundTrade/Merge">基金合并</a></li>
+                                    <li class="sub_item " data-value="venuefundtrade/split"><a href="/VenueFundTrade/Split">基金拆分</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li class="top_item hide" href="/LOFTrade/AfterFundSplit">
+                                <a class="top_a" href="javascript:void(0)">基金盘后业务</a>
+                                <ul class="sub">
+                                    <li class="sub_item " data-value="loftrade/afterfundsplit"><a href="/LOFTrade/AfterFundSplit">基金分拆</a></li>
+                                    <li class="sub_item " data-value="loftrade/afterfundmerge"><a href="/LOFTrade/AfterFundMerge">基金合并</a></li>
+                                </ul>
+                            </li>
+                            <li class="top_item hide" href="/LOFTrade/Subscribe">
+                                <a class="top_a" href="javascript:void(0)">上海LOF基金</a>
+                                <ul class="sub">
+                                    <li class="sub_item " data-value="loftrade/subscribe"><a href="/LOFTrade/Subscribe">LOF认购</a></li>
+                                    <li class="sub_item " data-value="loftrade/purchase"><a href="/LOFTrade/Purchase">LOF申购</a></li>
+                                    <li class="sub_item " data-value="loftrade/redeem"><a href="/LOFTrade/Redeem">LOF赎回</a></li>
+                                    <li class="sub_item " data-value="loftrade/merge"><a href="/LOFTrade/Merge">LOF合并</a></li>
+                                    <li class="sub_item " data-value="loftrade/split"><a href="/LOFTrade/Split">LOF拆分</a></li>
+                                    <li class="sub_item " data-value="loftrade/revoke"><a href="/LOFTrade/Revoke">LOF撤单</a></li>
+                                    <li class="sub_item " data-value="loftrade/querytodayorders"><a href="/LOFTrade/QueryTodayOrders">当日委托查询</a></li>
+                                    <li class="sub_item " data-value="loftrade/querytodaydeals"><a href="/LOFTrade/QueryTodayDeals">当日成交查询</a></li>
+                                    <li class="sub_item " data-value="loftrade/queryhistoryorders"><a href="/LOFTrade/QueryHistoryOrders">历史委托查询</a></li>
+                                </ul>
+                            </li>
+                            <li class="top_item hide" href="/ETFTrade/MoneySubcribe">
+                                <a class="top_a" href="javascript:void(0)">ETF</a>
+                                <ul class="sub">
+                                    <li class="sub_item " data-value="etftrade/moneysubcribe"><a href="/ETFTrade/MoneySubcribe">现金认购</a></li>
+                                    <li class="sub_item " data-value="etftrade/stocksubscribe"><a href="/ETFTrade/StockSubscribe">股票认购</a></li>
+                                    
+                                    <li class="sub_item" data-value="etftrade/purchase"><a href="/ETFTrade/Purchase">申购</a></li>
+                                    <li class="sub_item" data-value="etftrade/redeem"><a href="/ETFTrade/Redeem">赎回</a></li>
+                                    <li class="sub_item" data-value="etftrade/crosspurchase"><a href="/ETFTrade/CrossPurchase">跨境跨市场申购</a></li>
+                                    <li class="sub_item" data-value="etftrade/crossredeem"><a href="/ETFTrade/CrossRedeem">跨境跨市场赎回</a></li>
+                                    <li class="sub_item " data-value="etftrade/revoke"><a href="/ETFTrade/Revoke">撤单</a></li>
+                                    <li class="sub_item " data-value="etftrade/queryhistoryorders"><a href="/ETFTrade/QueryHistoryOrders">查询委托</a></li>
+                                    <li class="sub_item " data-value="etftrade/queryposition"><a href="/ETFTrade/QueryPosition">查询持仓</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="top_item hide" href="/OtherTrade/OfferPreDeal">
+                                <a class="top_a" href="javascript:void(0)">要约收购</a>
+                                <ul class="sub">
+                                    <li class="sub_item " data-value="othertrade/offerpredeal"><a href="/OtherTrade/OfferPreDeal">预受要约</a></li>
+                                    <li class="sub_item " data-value="othertrade/offercancel"><a href="/OtherTrade/OfferCancel">解除要约</a></li>
+                                </ul>
+                            </li>
+                            <li class="top_item hide" href="/OtherTrade/StockTranBuy">
+                                <a class="top_a" href="javascript:void(0)">三板交易</a>
+                                <ul class="sub">
+                                    <li class="sub_item " data-value="othertrade/stocktranbuy"><a href="/OtherTrade/StockTranBuy">买入</a></li>
+                                    <li class="sub_item " data-value="othertrade/stocktransale"><a href="/OtherTrade/StockTranSale">卖出</a></li>
+                                    <li class="sub_item " data-value="othertrade/stocktranredeem"><a href="/OtherTrade/StockTranRedeem">撤单</a></li>
+                                </ul>
+                            </li>
+                            <li class="top_item hide" href="/Transfer/TranSec">
+                                <a class="top_a" href="javascript:void(0)"> 银证转账</a>
+                                <ul class="sub">
+                                    <li class="sub_item " data-value="transec"><a href="/Transfer/TranSec">银行转证券</a></li>
+                                    <li class="sub_item " data-value="tranbank"><a href="/Transfer/TranBank">证券转银行</a></li>
+                                    <li class="sub_item " data-value="checkbala"><a href="/Transfer/CheckBala">银行资金查询</a></li>
+                                    <li class="sub_item " data-value="histranlist"><a href="/Transfer/HisTranList">转账记录</a></li>
+                                </ul>
+                            </li>
+                            <li class="top_item" data-value="updatepwd"><a class="top_a" href="/More/UpdatePwd">修改密码</a></li>
+                            
+                            <li class="top_item" data-value="accountconfirm"><a class="top_a" href="/More/AccountConfirm">账户信息核实</a></li>
+                            <li class="top_item hide" href="/More/NewBusiMana">
+                                <a class="top_a" href="javascript:void(0)"> 新业务办理</a>
+                                <ul class="sub">
+                                    <li class="sub_item " data-value="newbusimana"><a href="/More/NewBusiMana">开通沪市警示板</a></li>
+                                    <li class="sub_item" data-value="gemsign"><a href="/More/GemSign">创业板转签</a></li>
+                                    <li class="sub_item" data-value="more/openmarketprice"><a href="/More/OpenMarketPrice">开通市价委托</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+
+<div class="v_con">
+    <div class="maincenter-box-tip">
+        <p class="ui-tiptext ui-tiptext-message">
+            <span class="newBusi_Tit">
+                买入
+            </span>
+        </p>
+    </div>
+    <div class="contform">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">证券代码:</label>
+            <div class="col-sm-5" style="position:relative;z-index:200">
+                <input id="stockCode" type="text" maxlength="6" value="输入证券代码" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">证券名称:</label>
+            <div class="col-sm-5">
+                <input type="text" id="iptbdName" disabled="disabled" class="form-control" value="" />
+            </div>
+        </div>
+        <div class="form-group" style="padding-bottom:4px;">
+            <label class="col-sm-2 control-label">委托方式:</label>
+            <div class="col-sm-5">
+                <select name="delegateWay" id="delegateWay">
+                    <option value="" selected="selected"></option>
+                </select>
+            </div>
+        </div>
+        <div id="divTradePriceM" class="form-group" style="display:none;">
+            <label class="col-sm-2 control-label">买入价格:</label>
+            <div class="col-sm-5">
+                <label class="read red">市价委托</label>
+            </div>
+        </div>
+        <div id="divTradePriceL" class="form-group">
+            <label class="col-sm-2 control-label">买入价格:</label>
+            <div class="col-sm-5">
+                <div id="boxmrjg" class="form-control input_box">
+                    <span class="cut" title="减少" tabindex="6" hidefocus="true"></span><input id="iptPrice" type="text" class="input_text max" style="width:100px;" maxlength="13" value="" /><span class="txt" style="width:28px;text-align:right;" id="trade_MoneyType">元</span><span class="add" title="增加" tabindex="6" hidefocus="true"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" style="display:none;">
+            <label class="col-sm-2 control-label">可用资金:</label>
+            <div class="col-sm-5">
+                <label id="lbMaxFund" class="read red">0</label> &nbsp;<span class="small read red">元</span>
+            </div>
+        </div>
+        <div class="form-group" style="height: 23px; margin-bottom:7px">
+            <label class="col-sm-2 control-label">最大可买:</label>
+            <div class="col-sm-5">
+                <label id="lbMaxCount" class="read red">0</label><span class="small read red vstockunit_0"> &nbsp;股</span>
+            </div>
+        </div>
+        <div class="form-group" style="height:80px; padding-bottom:10px;">
+            <label class="col-sm-2 control-label" style="margin-top:21px;">买入数量:</label>
+            <div class="col-sm-5">
+                <p class="tips">请输入100的整数倍数量</p>
+                <div id="boxmrsl" class="form-control input_box ">
+                    <span class="cut" title="减少" tabindex="9" hidefocus="true"></span>
+                    <input type="text" id="iptCount" class="input_text max" maxlength="9" value="0" />
+                    <span class="txt vstockunit_1">股</span><span class="add" title="增加" tabindex="10" hidefocus="true"></span>
+                </div>
+                <div id="radNumBox" class="fl">
+                    <label class="radio-inline">
+                        <input type="radio" value="1" id="radall" name="optionsRadios" />
+                        <span>全部</span>
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value="1/2" id="radtwo" name="optionsRadios" />
+                        <span> 1/2</span>
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value="1/3" id="radstree" name="optionsRadios" />
+                        <span> 1/3</span>
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value="1/4" id="radfour" name="optionsRadios" />
+                        <span> 1/4</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group ml40" style="height: 120px;margin-left:63px;">
+            <button id="btnConfirm" class="btn btn-danger ml20" style="width:90px;" disabled="disabled" type="button">买&nbsp;入</button>
+            <button id="btnReset" class="btn btn-default ml30" style="margin-left: 28px; width: 90px;" type="reset">清&nbsp;空</button>
+        </div>
+    </div>
+    <div class="dashbox" id="dashbox">
+        <div class="inner">
+            <div class="datalist" id="datalist">
+            </div>
+            <div class="imgbox" id="imgbox">
+            </div>
+        </div>
+    </div>
+    <div class="form-list">
+    <div class="tabbar2">
+        <ul id="tabPanel" class="tabs2">
+            <li class="current" title="我的持仓"><a href="javascript:void(0)">我的持仓</a></li>
+            <li title="当日委托"><a href="javascript:void(0)">当日委托</a></li>
+            <li title="当日成交"><a href="javascript:void(0)">当日成交</a></li>
+        </ul>
+    </div>
+    <div class="listtable">
+        <table id="listTable">
+            <thead>
+                <tr>
+                    <th>证券代码</th>
+                    <th>证券名称</th>
+                    <th>持仓数量</th>
+                    <th>可用数量</th>
+                    <th>成本价</th>
+                    <th>当前价</th>
+                    <th>最新市值</th>
+                    <th>浮动盈亏</th>
+                    <th>盈亏比例(%)</th>
+                    <th>交易市场</th>
+                    <th>币种</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td colspan="12">加载中...</td></tr>
+            </tbody>
+        </table>        
+    </div>
+    <div id="pagerContainer"></div>
+</div>
+<script>
+    window.buyUrl = '/Trade/Buy';
+    window.saleUrl = '/Trade/Sale';
+</script>
+<script src="/Js/Trade/PosPartial.js?v=2017122801"></script>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+<div id="footer" class="foot mbody">
+    <p class="sphp"></p>
+    <p class="splp"><a target="_blank" href="http://corp.eastmoney.com/aboutus/">关于我们</a>&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://corp.eastmoney.com/Lianxi_guanggao.asp">广告服务</a>&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://corp.eastmoney.com/Lianxi_lianxi.asp">联系我们</a>&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://corp.eastmoney.com/zhaopin/zhaopin_1.asp">诚聘英才</a>&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://corp.eastmoney.com/lianxi_mianze.asp">免责声明</a>&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://corp.eastmoney.com/Lianxi_falvshengming.asp">法律声明</a>&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://corp.eastmoney.com/Lianxi_zhengao.asp">征稿启事</a>&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://corp.eastmoney.com/media.asp">友情链接</a></p>
+    <p class="sphp"></p>
+    <p>电话委托(沪深)：95357转8&nbsp;/&nbsp;4000197700 &#12288;客服热线：95357(沪深) / 400-920-1822(港美) &nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://corp.eastmoney.com/Lianxi_liuyan.asp"><img border="0" src="/Images/msg.gif" />意见与建议</a></p>
+    <p class="sphp"></p>
+    <p><img src="/Images/icp.gif" />&nbsp;沪ICP证：沪B2-20070217&nbsp;&nbsp;版权所有：<a target="_blank" href="http://www.eastmoney.com">东方财富网</a></p>
+    <p class="sphp"></p>
+    <p><a target="_blank" href="http://www.cyberpolice.cn/"><img border="0" src="/Images/police.gif" /></a></p>
+</div>
+    </div>
+    <script src="/JsBundles/Public_Pages_Init?v=6BoD6echHvpSWf_l_vu-eHVsYVcmKqmp9Nf3W4yToVc1"></script>
+<script src="/JsBundles/CbbkeyboardV2?v=2q9dKNDB2_9OEuPQ2V6cnUvv4O2WHqVGfqvGln5ueMs1"></script>
+<script src="/JsBundles/GGQQLogin?v=-yvT8mY7x0DXDCROna8MV4JMvH7d71tAD0rPyl_uXiE1"></script>
+
+        
+    <script src="/JsBundles/Private_Transaction_Pages?v=NTixJbtQAn3cUg4hisEYG5JxXiUWQixKQc5oiM9WL5Q1"></script>
+
+    <script type="text/javascript">
+        (function ($) {
+            TS.Buy.initialize();
+        })(jQuery)
+    </script>
+    <script src="/JsBundles/EmLayerNotice?v=me64JFfkmCrtO3OMZqht7Qm0FmYSI5HeKycXsOszx0E1"></script>
+    
+
+</body>
+</html>

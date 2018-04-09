@@ -1,0 +1,58 @@
+﻿// window.addEventListener("beforeunload", function() { debugger; }, false)
+
+
+{
+	"commonRetryTimes": "5",
+	"homepage": "https://jy.xzsec.com/Trade/Buy",
+
+/*========get vcode============
+Address:
+    https://jy.xzsec.com/Login/YZM?=randNum=0.0123456789012345
+*/
+	"vCode": "https://jy.xzsec.com/Login/YZM",
+  
+  
+/*========log in============
+Address:
+	https://jy.xzsec.com/Login/Authentication?validatekey=
+Params:
+    *userId:xx
+    *password:xx
+    randNumber:0.7739412556383434
+    identifyCode:1223
+    *duration:1800
+    authCode:
+    type:Z
+*/
+
+	"login": "https://jy.xzsec.com/Login/Authentication?validatekey=",
+	"loggedinSign" : "em_validatekey",
+	"duration": "1800",
+/*========log in============*/
+
+/*========buy============
+Address:
+	https://jy.xzsec.com/Trade/SubmitTrade?validatekey=3268ea77-8892-41f3-9a1c-e17cdcc344f4
+Query Params:
+	validatekey:3268ea77-8892-41f3-9a1c-e17cdcc344f4
+Form Params:
+	stockCode:000066
+	price:7.19
+	amount:100
+	tradeType:B
+	zqmc:中国长城
+*/
+	"buyUrl": "https://jy.xzsec.com/Trade/SubmitTrade?validatekey=",
+/*========buy============*/
+
+
+/*=========revoke========*/
+	"getRevokeListUrl": "https://jy.xzsec.com/Trade/GetRevokeList?validatekey=",
+	"doRevokeUrl":"https://jy.xzsec.com/Trade/RevokeOrders?validatekey=",
+
+/*===get all stock data===*/
+	"getAllStockDataUrl":"https://jy.xzsec.com/Search/GetStockList?validatekey=",
+
+/*===sell===*/
+	"sellUrl":"https://jy.xzsec.com/Trade/SubmitTrade?validatekey="
+}

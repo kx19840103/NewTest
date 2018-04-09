@@ -1,0 +1,18 @@
+﻿[
+  {
+    "Code": "123456",
+    "Market": 0,
+    "CeilPrice": 0.2,
+    "FloorPrice": 0.0,
+    "BasePrice": 0.1,
+    "PriceFix": 0.0
+  },
+  {
+    "Code": "654321",
+    "Market": 0,
+    "CeilPrice": 0.2,
+    "FloorPrice": 0.0,
+    "BasePrice": 0.1,
+    "PriceFix": 0.0
+  }
+]

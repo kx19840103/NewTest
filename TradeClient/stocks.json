@@ -1,0 +1,27 @@
+﻿[
+  {
+  /*
+    "Code": 600000,
+    "Market": 0,
+    "CeilPrice": 0.0,
+    "FloorPrice": 0.0,
+    "BasePrice": 0.0,
+    "PriceFix": 0.0,
+    "Intervalnumber": 0,
+    "Basebottom": 0.0,
+    "Totalinvestment": 0.0,
+    "Intervaltime": 0.0,
+    "Initialposition": 0.0
+  */
+    "Code": 113009,
+    "Market": "SH", // "SH", "SZ"
+    "CeilPrice": 116.57,
+    "FloorPrice": 115.41,
+    "BasePrice": 115.99,
+    "PriceFix": 0.005,
+    "Intervalnumber": 10,
+    "Basebottom": 0.0,
+    "Totalinvestment": 10000.0,
+    "Intervaltime": 0.0,
+  }
+]
